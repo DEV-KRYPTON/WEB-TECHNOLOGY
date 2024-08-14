@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Product Feedback Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>We Value Your Feedback</h1>
+        <p>Your feedback helps us improve our product. Please provide your comments below.</p>
+        <form id="feedback-form" action="/submit-feedback" method="POST">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="product-version">Product Version:</label>
+                <input type="text" id="product-version" name="product-version">
+            </fieldset>
+
+            <fieldset>
+                <legend>Feedback Details</legend>
+                <label for="rating">Overall Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">-- Select Rating --</option>
+                    <option value="1">1 - Very Poor</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="3">3 - Average</option>
+                    <option value="4">4 - Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+                
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="6" required></textarea>
+                
+                <label for="suggestions">Suggestions for Improvement:</label>
+                <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Submit</legend>
+                <button type="submit">Submit Feedback</button>
+                <button type="reset">Reset</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
